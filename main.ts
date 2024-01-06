@@ -3,6 +3,8 @@ function findLongestCommonPrefix(strings: string[]): string {
     return "";
   }
   return strings.reduce((accamulator, currentValue, index, array) => {
+    if (currentValue.length < accamulator.length) return accamulator;
+    
     let tempPrefix = "";
     for (let i = 0; i < currentValue.length; i++) {
       const currentChar = currentValue[i];
